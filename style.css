@@ -1,157 +1,96 @@
-/*resume form styles*/
-body{
-	background: pink;
+/*css {for index*/
+#body{
+	background: bisque;
 	text-align: center;
 }
-#h1{
-	background: bisque;
-	margin: 3%;
-	padding: 2%;
-	font-size: 40px;
-	border-radius: 5%;
-	box-shadow: 2px 2px 2px 2px;
-	color: aqua;
+#first{
+	background: pink ;
 	text-align: center;
+	margin:4%;
+	box-shadow: 2px 2px 2px 2px;
 }
 .profile{
-	color:red;
+	color: red;
 }
-#h2{
-	background:purple;
-	margin: 3%;
-	padding: 2%;
-	font-size: 40px;
-	border-radius: 5%;
-	box-shadow: 2px 2px 2px 2px;
+#second{
+	background: pink;
+	margin-left:30%;
 	text-align: center;
+	width: 40%;
+	box-shadow: 2px 2px 2px 2px;
 }
 img{
-	height:10%;
-	width:10%;
+	margin: 5%;
 }
+
+
 #form{
-	background:#0DADEE;
+	background:#BE2525 ;
 	text-align: center;
 }
 .main{
 	background: bisque;
-	margin:2%;
-	border-radius: 5%;
-	flex-wrap: wrap;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+    margin: 3%;
+    border-radius: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 2px 2px 2px 2px;
+    text-align: left;
 }
 .sub{
+	background: #B3D1E8;
+	margin: 2%;
+	border-radius: 2%;
+	padding: 3%;
 	width: 90%;
-	margin: 3%;
-	background:pink;
-	padding: 2%;
-	text-align: center;
-	border-radius: 5%;
 	box-shadow: 2px 2px 2px 2px;
 }
-.sub-1{
-	width: 40%;
-	margin: 3%;
-	background:pink;
+.sub1{
+	background: #B3D1E8;
+	margin: 4%;
+	border-radius: 2%;
 	padding: 2%;
-	text-align: center;
-	border-radius: 5%;
-	box-shadow:2px 2px 2px 2px;
+	width: 30%;
+	box-shadow: 2px 2px 2px 2px;
 }
 input,select{
-	width:70%;
+	width: 80%;
 }
-button{
-	width:20%;
-}
-/*tablet view*/
-@media screen and (min-width:481px ) and (max-width:1024px) {
+@media screen and (max-width: 480px){
 body{
-	background: purple;
-	text-align: 
+	background: #F6F642;
 }
-#h1{
-	background:#F6FF33;
-	display:inline-block;
-	margin: 1%;
-	justify-content: space-around;
 }
-
-#h2{
-	background:#FC33FF;
-	margin: 2%;
-	border-radius: 5%;
-	height: 40%;
-	width:96%;
-	box-shadow:2px 2px 2px 2px;
+#first{
+	background: #7898CA;
 	text-align: center;
-
-}
-#h1:hover{
-	background:pink;
-}
-#h2:hover{
-	background:green;
-}
-.main{
-	background: red;
-	margin:2%;
-	border-radius: 5%;
-	flex-wrap: wrap;
-	display: inline-block;
-	flex-direction: row;
-	justify-content: center;
-	}
-img{
-	height: 50%;
-	width: 25%;
 	margin: 4%;
-	border-radius: 5%;
+	border-radius: 3%
 }
-}
-/*mobile view*/
-@media screen and (max-width:480px) {
+#second{
+     background: #FC9297;
+     margin-left: 30%;
+     border-radius: 3%;
+     text-align: center;
+     width: 40%;
+     box-shadow: 4px 4px 4px 4px;
+ }
+ @media screen and (min-width: 481px) and (max-width: 660px){
 body{
-	background: blue;
-	text-align: 
+	background: #EF5057;
 }
-#h1{
-	background:yellow;
-	display:inline-block;
-	margin: 1%;
-	justify-content: space-around;
+#first{
+	background: yellow;
+	margin-left: 4%;
+	border-radius: 3%
 }
-#h2{
-	background:brown;
-	margin: 2%;
-	border-radius: 5%;
-	height: 40%;
-	width:96%;
-	box-shadow:2px 2px 2px 2px;
-	text-align: center;
+#second{
+     background: #FC9297;
+     margin-left: 40%;
+     border-radius: 3%;
+     text-align: center;
+     width: 40%;
+     box-shadow: 4px 4px 4px 4px;
+}
 
-}
-#h1:hover{
-	background:pink;
-}
-#h2:hover{
-	background:green;
-}
-.main{
-	background:yellow;
-	margin:2%;
-	border-radius: 5%;
-	flex-wrap: wrap;
-	display: inline-block;
-	flex-direction: row;
-	justify-content: center;
-	}
-img{
-	height: 50%;
-	width: 25%;
-	margin: 4%;
-	border-radius: 5%;
-}
 }
