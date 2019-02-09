@@ -64,7 +64,7 @@ function display(d){
 	for(i=0;i<d.length;i++){
 		var head=document.createElement("h2");
 		head.textContent=d[i].name;
-		// body.append(head);
+		 body.append(head);
 		var ach=document.createElement("a");
 		ach.classList.add("profile");
 		ach.setAttribute("href","resume.html?"+d[i].name);
@@ -75,13 +75,4 @@ function display(d){
 
 	}
 }
-
-
-
-
-
-
-
-
-
 </script>>
