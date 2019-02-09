@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>resume page</title>
+	<link rel="stylesheet" type="text/css" href="resume.css">
+</head>
+<body>
+	<div class="maindiv">
+
+		<div class="leftdiv">
+			
+		</div>
+		<div class="rightdiv">
+			
+		</div>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	let url=window.location.search;
+	let length=url.length;
+	let proname=url.slice(1,length);
+	var indexedDB=window.indexedDB || window.mozIndexedDB ||window.msIndexedDB ||window.webkitIndexedDB;
+var store;
+var open;
+var result;
+var tx;
+var request=indexedDB.open("database",1);
+request.onupgradeneeded=function(e) {
+  open=e.target.result;
+ store=open.createObjectStore("resumedata",{keyPath:"name"});
+
+
+}
+request.onerror=function(e) {
+	console.log("error"+e);
+}
+request.onsuccess=function(e) {
+  open = e.target.result;
+  tx =open.transaction("resumedata",'readwrite');
+  store = tx.objectStore("resumedata");
+  var info=store.get(proname);
+  info.onsuccess=function(data){
+  	console.log(data.target.result);
+  	display(data.target.result);
+
+  }
+ }
+var left=document.querySelector(".leftdiv");
+var right=document.querySelector(".rightdiv");
+function display(d){
+	var image=document.createElement("img");
+	image.src="images/indu.jpg";
+	left.append(image);
+	
+var head1=document.createElement("h1");
+	head1.textContent="carrer objective";
+	right.append(head1);
+	var head1=document.createElement("h2");
+	head1.textContent=d.name;
+	left.append(head1);
+var head2=document.createElement("h2");
+	head2.textContent=d.mobile;
+	left.append(head2);
+	var head3=document.createElement("h2");
+	head3.textContent=d.email;
+	left.append(head3);
+
+	var head1=document.createElement("h3");
+	head1.textContent=d.carrer;
+	right.append(head1);
+
+
+
+	var head1=document.createElement("h2");
+	head1.textContent=d.name;
+	right.append(head1);
+
+var head2=document.createElement("h2");
+	head2.textContent=d.mobile;
+	right.append(head2);
+
+	var head3=document.createElement("h2");
+	head3.textContent=d.email;
+	right.append(head3);
+	var head1=document.createElement("h1");
+	head1.textContent="education details";
+	right.append(head1);
+	for (var i in d.education){
+		var head1=document.createElement("h2");
+	head1.textContent=d.education[i].degree;
+	right.append(head1);
+	var ul=document.createElement("ul");
+	var li=document.createElement("li");
+	li.textContent=d.education[i].inst;
+	ul.append(li);
+	var li1=document.createElement("li");
+	li1.textContent=d.education[i].per;
+	ul.append(li1);
+	var li2=document.createElement("li");
+	li2.textContent=d.education[i].yop;
+	ul.append(li2);
+	head1.append(ul);
+	
+	
+
+	}
+
+	var head1=document.createElement("h2");
+	head1.textContent=d.Pdegree;
+	right.append(head1);
+var head1=document.createElement("h3");
+	head1.textContent=d.Pinst;
+	right.append(head1);
+	var head1=document.createElement("h3");
+	head1.textContent=d.Pper;
+	right.append(head1);
+
+	var head1=document.createElement("h3");
+	head1.textContent=d.Pyop;
+	right.append(head1);
+
+
+
+
+}
+
+
+
+
+
+
+
+</script>

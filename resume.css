@@ -1,0 +1,23 @@
+body
+{
+	background:bisque;
+}
+.maindiv{
+	display: flex;
+	color: red;
+	box-shadow: 2px 2px 2px 2px;
+	margin: 3%;
+}
+.leftdiv{
+	color:black;
+	text-align: center;
+	box-shadow: 2px 2px 2px 2px;
+	margin: 3%;
+	height: 30%;
+}
+.rightdiv{
+	color: blue;
+padding: 2%;
+	box-shadow: 2px 2px 2px 2px;
+	margin: 3%;
+}

@@ -1,0 +1,157 @@
+/*resume form styles*/
+body{
+	background: pink;
+	text-align: center;
+}
+#h1{
+	background: bisque;
+	margin: 3%;
+	padding: 2%;
+	font-size: 40px;
+	border-radius: 5%;
+	box-shadow: 2px 2px 2px 2px;
+	color: aqua;
+	text-align: center;
+}
+.profile{
+	color:red;
+}
+#h2{
+	background:purple;
+	margin: 3%;
+	padding: 2%;
+	font-size: 40px;
+	border-radius: 5%;
+	box-shadow: 2px 2px 2px 2px;
+	text-align: center;
+}
+img{
+	height:10%;
+	width:10%;
+}
+#form{
+	background:#0DADEE;
+	text-align: center;
+}
+.main{
+	background: bisque;
+	margin:2%;
+	border-radius: 5%;
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.sub{
+	width: 90%;
+	margin: 3%;
+	background:pink;
+	padding: 2%;
+	text-align: center;
+	border-radius: 5%;
+	box-shadow: 2px 2px 2px 2px;
+}
+.sub-1{
+	width: 40%;
+	margin: 3%;
+	background:pink;
+	padding: 2%;
+	text-align: center;
+	border-radius: 5%;
+	box-shadow:2px 2px 2px 2px;
+}
+input,select{
+	width:70%;
+}
+button{
+	width:20%;
+}
+/*tablet view*/
+@media screen and (min-width:481px ) and (max-width:1024px) {
+body{
+	background: purple;
+	text-align: 
+}
+#h1{
+	background:#F6FF33;
+	display:inline-block;
+	margin: 1%;
+	justify-content: space-around;
+}
+
+#h2{
+	background:#FC33FF;
+	margin: 2%;
+	border-radius: 5%;
+	height: 40%;
+	width:96%;
+	box-shadow:2px 2px 2px 2px;
+	text-align: center;
+
+}
+#h1:hover{
+	background:pink;
+}
+#h2:hover{
+	background:green;
+}
+.main{
+	background: red;
+	margin:2%;
+	border-radius: 5%;
+	flex-wrap: wrap;
+	display: inline-block;
+	flex-direction: row;
+	justify-content: center;
+	}
+img{
+	height: 50%;
+	width: 25%;
+	margin: 4%;
+	border-radius: 5%;
+}
+}
+/*mobile view*/
+@media screen and (max-width:480px) {
+body{
+	background: blue;
+	text-align: 
+}
+#h1{
+	background:yellow;
+	display:inline-block;
+	margin: 1%;
+	justify-content: space-around;
+}
+#h2{
+	background:brown;
+	margin: 2%;
+	border-radius: 5%;
+	height: 40%;
+	width:96%;
+	box-shadow:2px 2px 2px 2px;
+	text-align: center;
+
+}
+#h1:hover{
+	background:pink;
+}
+#h2:hover{
+	background:green;
+}
+.main{
+	background:yellow;
+	margin:2%;
+	border-radius: 5%;
+	flex-wrap: wrap;
+	display: inline-block;
+	flex-direction: row;
+	justify-content: center;
+	}
+img{
+	height: 50%;
+	width: 25%;
+	margin: 4%;
+	border-radius: 5%;
+}
+}

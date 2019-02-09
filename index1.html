@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>:resume:</title>
+	<link rel="stylesheet" type="text/css" href="form.html">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="apple-touch-icon" sizes="57x57" href="./icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
+<link rel="manifest" href="./icon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+</head>
+<body id="body">
+		<h1 id="h1">resume buliding</h1>
+		<h2 id="h2"><a href="form.html"><img src="images/plus.jpg" alt="plus pic"></a></h2>
+		<!-- <img src="images/plus.jpg" alt="plus pic"> -->
+
+</body>
+</html>
+<script type="text/javascript" src="./js/swregister"></script>
+<script type="text/javascript">
+	var indexedDB=window.indexedDB || window.mozIndexedDB ||window.msIndexedDB ||window.webkitIndexedDB;
+	indexedDB?console.log("success"):console.log("error")
+var store;
+var open;
+var result;
+var tx;
+var request=indexedDB.open("database",1);
+request.onupgradeneeded=function(e) {
+  open=e.target.result;
+ store=open.createObjectStore("resumedata",{keyPath:"name"});
+
+
+}
+request.onerror=function(e) {
+	console.log("error"+e);
+}
+request.onsuccess=function(e) {
+  open = e.target.result;
+  tx =open.transaction("resumedata",'readwrite');
+  store = tx.objectStore("resumedata");
+  var info=store.getAll();
+  info.onsuccess=function(data){
+  	console.log(data);
+  	display(data.target.result);
+  }
+}
+var body=document.querySelector("#body");
+function display(d){
+	for(i=0;i<d.length;i++){
+		var head=document.createElement("h2");
+		head.textContent=d[i].name;
+		// body.append(head);
+		var ach=document.createElement("a");
+		ach.classList.add("profile");
+		ach.setAttribute("href","resume.html?"+d[i].name);
+		ach.append(head);
+		body.append(ach);
+		console.log(d[i].name);
+
+
+	}
+}
+
+
+
+
+
+
+
+
+
+</script>>

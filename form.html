@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>resume form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body id="form">
+	<div class="main">
+		<div class ="sub">
+		<h1>CARRER OBJECTIVE</h1>
+		<label for="carrer">
+		<select id="carrer" name="carrer">
+			<option> select carrer objective</option>
+			<option> to work in an environment where i can utilize my own ideas</option>
+			<option>to work in an mnc company</option>
+			<option>to work in product based company</option>
+		</select></label>
+	</div>
+	<div class="sub-1">
+		<h1>PERSONAL INFORMATION</h1>
+		<label for="name">
+		<input type="text" name="name" id="name" placeholder="enter your name"></label><br><br>
+		<label for="mobile">
+		<input type="number" name="mobile" id="mobile" placeholder="enter your mobile number"></label><br><br>
+		<label for="email">
+		<input type="text" name="email" id="email" placeholder="enter your email adress"></label>
+		
+	</div>
+	<div class="sub-1">
+		<h1>PG DETAILS</h1>
+		<label for="Pdegree">
+		<select id="Pdegree" name="Pdegree">
+			<option> degree</option>
+			<option> M.tech</option>
+			<option>MCA</option>
+			<option> MSC</option>
+		</select></label><br><br>
+		<label for="Pinst">
+		<input type="text" name="Pinst" id="Pinst" placeholder="enter your inst name"></label><br><br>
+		<label for="Pper">
+		<input type="number" name="Pper" id="Pper" placeholder="enter your per"></label><br><br>
+		<label for="Pyop">
+		<input type="text" name="Pyop" id="Pyop" placeholder="enter your yop"></label>
+	</div>
+	<div class="sub-1">
+		<h1>GRADUATION DETAILS</h1>
+		<label for="gdegree">
+
+		<select id="gdegree" name="gdegree">
+			<option> degree</option>
+			<option> B.tech</option>
+		</select><br><br>
+		<label for="Ginst">
+		<input type="text" name="Ginst" id="Ginst" placeholder="enter your inst name"></label><br><br>
+		<label for="Gper">
+		<input type="number" name="Gper" id="Gper" placeholder="enter your per"></label><br><br>
+		<label for="Gyop">
+		<input type="text" name="Gyop" id="Gyop" placeholder="enter your yop"></label>
+	</div>
+	<div class="sub-1"> 
+		<h1>INTER DETAILS</h1>
+		<label for="Idegree">
+		<select id="Idegree" name="Idegree">
+			<option>degree</option>
+			<option>mpc</option>
+			<option>bipc</option>
+		</select></label><br><br>
+		<label for="Iinst">
+		<input type="text" name="Iinst" id="Iinst" placeholder="enter your inst name"></label><br><br>
+		<label for="Iper">
+		<input type="number" name="Iper" id="Iper" placeholder="enter your per"></label><br><br>
+		<label for="Iyop">
+		<input type="text" name="Iyop" id="Iyop" placeholder="enter your yop"></label>
+	</div>
+	<div class="sub-1">
+		<h2>SSC</h2>
+		<label for="Sdegree">
+		<select id="Sdegree" name="Sdegree">
+			<option>10TH DETAILS</option>
+			<option>SSC</option>
+		</select></label><br><br>
+		<label for="Sinst">
+		<input type="text" name="Sinst" id="Sinst" placeholder="enter your inst name"></label><br><br>
+		<label for="Sper">
+		<input type="number" name="Sper" id="Sper" placeholder="enter your per"></label><br><br>
+		<label for="Syop">
+		<input type="text" name="Syop" id="Syop" placeholder="enter your yop"></label>
+	</div>
+</div>
+<button type="button" id="button" name="button" onclick="submitdata()">submit</button>
+</body>
+</html>
+<script type="text/javascript">
+	function submitdata() {
+var carrer=document.getElementById("carrer").value;
+var name=document.getElementById("name").value;
+var mobile=document.getElementById("mobile").value;
+var email=document.getElementById("email").value;
+
+var Pdegree=document.getElementById("Pdegree").value;
+var Pinst=document.getElementById("Pinst").value;
+var Pper=document.getElementById("Pper").value;
+var Pyop=document.getElementById("Pyop").value;
+
+var gdegree=document.getElementById("gdegree").value;
+var Ginst=document.getElementById("Ginst").value;
+var Gper=document.getElementById("Gper").value;	
+var Gyop=document.getElementById("Gyop").value;
+
+var Idegree=document.getElementById("Idegree").value;
+var Iinst=document.getElementById("Iinst").value;
+var Iper=document.getElementById("Iper").value;	
+var Iyop=document.getElementById("Iyop").value;
+
+var Sdegree=document.getElementById("Sdegree").value;
+var Sinst=document.getElementById("Sinst").value;
+var Sper=document.getElementById("Sper").value;	
+var Syop=document.getElementById("Syop").value;
+
+var indexedDB=window.indexedDB || window.mozIndexedDB ||window.msIndexedDB ||window.webkitIndexedDB;
+var store;
+var open;
+var result;
+var tx;
+var request=indexedDB.open("database",1);
+request.onupgradeneeded=function(e) {
+  open=e.target.result;
+ store=open.createObjectStore("resumedata",{keyPath:"name"});
+
+
+}
+request.onerror=function(e) {
+	console.log("error"+e);
+}
+request.onsuccess=function(e) {
+  open = e.target.result;
+  tx =open.transaction("resumedata",'readwrite');
+  store = tx.objectStore("resumedata");
+  store.put({
+	carrer:carrer,
+	name:name,
+	mobile:mobile,
+	email:email,
+	education:[
+	{
+      degree:Pdegree,
+      inst:Pinst,
+      per:Pper,
+      yop:Pyop
+	},
+	{
+      degree:gdegree,
+      inst:Ginst,
+      per:Gper,
+      yop:Gyop
+	},
+	{
+		degree:Idegree,
+		inst:Iinst,
+		per:Iper,
+		yop:Iyop
+	},
+	{
+		degree:Sdegree,
+		inst:Sinst,
+		per:Sper,
+		yop:Syop
+	}]
+});
+	
+}
+window.open("index1.html","_self");
+
+
+
+}
+
+</script>
