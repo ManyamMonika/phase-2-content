@@ -22,6 +22,7 @@
 	let length=url.length;
 	let proname=url.slice(1,length);
 	var indexedDB=window.indexedDB || window.mozIndexedDB ||window.msIndexedDB ||window.webkitIndexedDB;
+	indexedDB?console.log("success"):console.log("error");
 var store;
 var open;
 var result;
